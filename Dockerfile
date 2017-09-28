@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM ubuntu:16.04
 MAINTAINER Benedikt Lang <mail@blang.io>
 
 ENV DEBIAN_FRONTEND noninteractive
@@ -10,7 +10,7 @@ RUN locale-gen en_US.UTF-8
 
 RUN apt-get install -y wget attr software-properties-common psmisc
 
-RUN add-apt-repository ppa:gluster/glusterfs-3.6 && \
+RUN add-apt-repository ppa:gluster/glusterfs-3.8 && \
 	apt-get update -q && \
 	apt-get install -y glusterfs-server
 
