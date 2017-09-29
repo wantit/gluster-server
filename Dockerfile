@@ -6,9 +6,9 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update -q
 
 # generate a local to suppress warnings
-RUN locale-gen en_US.UTF-8
 
-RUN apt-get install -y wget attr software-properties-common psmisc
+RUN apt-get install -y wget attr software-properties-common psmisc locales
+RUN locale-gen en_US.UTF-8
 
 RUN add-apt-repository ppa:gluster/glusterfs-3.8 && \
 	apt-get update -q && \
